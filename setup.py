@@ -137,6 +137,7 @@ def run_setup(extension_modules=None):
             "Programming Language :: Python :: 3.10",
             "Programming Language :: Python :: 3.11",
             "Programming Language :: Python :: 3.12",
+            "Programming Language :: Python :: 3.12",
             "Programming Language :: Python :: 3 :: Only",
             "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
             "Topic :: Multimedia :: Graphics :: Presentation",
@@ -146,6 +147,7 @@ def run_setup(extension_modules=None):
         include_package_data=True,
         package_data={"": ["*.xml"]},
         install_requires=[
+            "setuptools",
             "colorama==0.*,>=0.4.6",
             "derpconf==0.*,>=0.8.4",
             "libthumbor==2.*,>=2.0.2",
@@ -182,8 +184,5 @@ except SystemExit as exit_error:
     print(f"\n\n{'*' * 66}")
     logging.exception(exit_error)
     print(f"\n\n{'*' * 66}")
-    print(
-        "Couldn't build one or more native extensions"
-        ", skipping compilation.\n\n"
-    )
+    print("Couldn't build one or more native extensions" ", skipping compilation.\n\n")
     run_setup()
